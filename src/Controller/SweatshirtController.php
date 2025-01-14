@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class SweatshirtController extends AbstractController
 {
-    #[Route('/sweatshirt', name: 'app_sweatshirt')]
+    #[Route('/products', name: 'app_sweatshirt')]
     public function index(SweatshirtRepository $SweatshirtRepository): Response
     {
         $sweatshirt = $SweatshirtRepository->findAll();
@@ -18,7 +18,7 @@ class SweatshirtController extends AbstractController
             'sweatshirt' => 'SweatshirtController',
         ]);
     }
-    #[Route('/sweatshirt/{id}', name: 'app_sweatshirtDetail')]
+    #[Route('/product/{id}', name: 'app_sweatshirtDetail')]
     public function detail(int $id, SweatshirtRepository $SweatshirtRepository): Response
     {
         $sweatshirt = $SweatshirtRepository->find($id);

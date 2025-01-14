@@ -37,7 +37,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $name;
 
     #[ORM\Column(type: 'string', length: 255, nullable: 'true')]
-    private $delivryAdress;
+    private $deliveryAdress;
 
     public function getId(): ?int
     {
@@ -118,12 +118,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getDeliveryAdress(): ?string
     {
-        return $this->delivryAdress;
+        return $this->deliveryAdress;
     }
 
-    public function setDeliveryAdress(?string $delivryAdress): self
+    public function setDeliveryAdress(?string $deliveryAdress): self
     {
-        $this->delivryAdress = $delivryAdress;
+        $this->deliveryAdress = $deliveryAdress;
         return $this;
     }
 
