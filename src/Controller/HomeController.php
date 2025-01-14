@@ -12,6 +12,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index( SweatshirtRepository $sweatshirtRepository ): Response
     {
+        $featuredSweatshirts = $sweatshirtRepository->findBy((['isFeatured' => true]));
         return $this->render('home/index.html.twig', [
             'featuredSweatshirts' => $featuredSweatshirts,
         ]);
